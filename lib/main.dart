@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:land_measure/theme/app_theme.dart';
 
 void main() {
   runApp(const LandMeasure());
@@ -7,14 +8,13 @@ void main() {
 class LandMeasure extends StatelessWidget {
   const LandMeasure({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        colorScheme: .fromSeed(seedColor: Colors.deepPurple),
-      ),
-      home: Center(child: Text("This is  a land Measure App"),)
+      title: 'Land Measure',
+      theme: AppTheme.darkTheme,
+      debugShowCheckedModeBanner: false,
+      home: const Center(child: Text("This is a land Measure App")),
     );
   }
 }
