@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:land_measure/core/theme/app_theme.dart';
 
 class FeatureTile extends StatelessWidget {
   final IconData leading;
@@ -15,14 +16,22 @@ class FeatureTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      contentPadding: EdgeInsets.symmetric(horizontal: 8),
+      shape: RoundedRectangleBorder(
+        borderRadius: .circular(10),
+        side: BorderSide(color: AppColors.textSecondary, width: 1),
+      ),
       leading: Container(
         width: 40,
         height: 40,
         decoration: BoxDecoration(
-          color: Theme.of(context).primaryColor,
+          color: AppColors.primaryGreen.withAlpha(100),
           borderRadius: .circular(10),
         ),
-        child: Icon(leading),
+        child: Icon(
+          leading,
+          color: AppColors.primaryGreen,
+        ),
       ),
       title: Text(
         title,
