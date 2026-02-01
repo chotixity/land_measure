@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:land_measure/core/theme/app_theme.dart';
 import 'package:land_measure/features/measurement/presentation/widgets/feature_tile.dart';
 
+import '../presentation.dart';
+
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
 
@@ -53,7 +55,11 @@ class WelcomeScreen extends StatelessWidget {
             ),
 
             ElevatedButton.icon(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => MeasurementScreen()),
+                );
+              },
               iconAlignment: IconAlignment.end,
               icon: Icon(Icons.arrow_forward),
               label: Text('Start measuring'),
