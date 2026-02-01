@@ -6,6 +6,7 @@ class AppColors {
   static const Color primaryGreen = Color(0xFF4ADE80);
   static const Color primaryGreenDark = Color(0xFF22C55E);
   static const Color primaryGreenLight = Color(0xFF86EFAC);
+  static const Color neonGreen = Color(0xFF39FF14);
 
   // Background colors
   static const Color backgroundDark = Color(0xFF0D1F12);
@@ -54,15 +55,13 @@ class AppTheme {
       useMaterial3: true,
       brightness: Brightness.dark,
       primaryColor: AppColors.primaryGreen,
-      scaffoldBackgroundColor: AppColors.backgroundDark,
-
       // Color scheme
       colorScheme: const ColorScheme.dark(
         primary: AppColors.primaryGreen,
         primaryContainer: AppColors.primaryGreenDark,
         secondary: AppColors.primaryGreenLight,
         secondaryContainer: AppColors.backgroundElevated,
-        surface: AppColors.backgroundCard,
+        // surface: AppColors.backgroundCard,
         error: AppColors.error,
         onPrimary: AppColors.textOnPrimary,
         onSecondary: AppColors.textOnPrimary,
@@ -101,7 +100,8 @@ class AppTheme {
       // Elevated button theme
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-          backgroundColor: AppColors.primaryGreen,
+          minimumSize: const Size(double.infinity, 50),
+          backgroundColor: AppColors.neonGreen,
           foregroundColor: AppColors.textOnPrimary,
           elevation: 0,
           padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
@@ -300,7 +300,10 @@ class AppTheme {
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
         fillColor: AppColors.backgroundCard,
-        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+        contentPadding: const EdgeInsets.symmetric(
+          horizontal: 16,
+          vertical: 16,
+        ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
           borderSide: BorderSide.none,
