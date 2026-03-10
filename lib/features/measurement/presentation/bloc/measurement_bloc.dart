@@ -330,6 +330,7 @@ class MeasurementBloc extends Bloc<MeasurementEvent, MeasurementState> {
     );
   }
 
+  @override
   Future<void> close() {
     _locationSubscription?.cancel();
     return super.close();
